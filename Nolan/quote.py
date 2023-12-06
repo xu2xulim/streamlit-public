@@ -12,8 +12,6 @@ from deta import Deta
 #import json
 
 
-
-
 if 'stage' not in st.session_state:
     st.session_state.stage = False
 
