@@ -75,7 +75,7 @@ if not st.session_state['stage']:
                 sum += sx['quantity'] * sx['unit_amount']/100
                 items.append(temp)
         
-        st.write(f"Our quotation based on the information you have given us is ${sum/100}")
+        st.write(f"Our quotation based on the information you have given us is ${sum}")
         st.write("Please confirm your order quantity before you checkout. Thanks")
         st.link_button(":blue[Checkout]", f"https://needyodddeletion.milynnus.repl.co/checkout/{st.session_state['order_key']}")
 
