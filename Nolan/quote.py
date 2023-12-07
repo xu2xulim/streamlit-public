@@ -76,7 +76,18 @@ if not st.session_state['stage']:
                 items.append(temp)
         
         st.write(f"Our quotation based on the information you have given us is ${sum}")
-        st.write("Please confirm your order quantity before you checkout. Thanks")
-        st.link_button(":blue[Checkout]", f"https://needyodddeletion.milynnus.repl.co/checkout/{st.session_state['order_key']}")
 
+        st.write("Please confirm your order quantity before you checkout. Thanks")
+        cta = st.radio(
+            "Please select from one of the call to action options",
+                [":rainbow[Call Back]", "***Place a booking***"],
+                captions = ["You will be promoted to book date and time to call you", "Payment will be via Stripe"])
+
+        if cta == ':rainbow[Call Back]':
+            st.write('You selected for us to call you back.')
+            st.link_button(":blue[Book Now]", "https://tidycal.com/milynnus/quick-chat")
+        else:
+            st.write("You have decided to place a booking.")
+            st.link_button(":blue[Checkout]", f"https://needyodddeletion.milynnus.repl.co/checkout/{st.session_state['order_key']}")
+            st.link_button(":blue[Book Now]", "https://tidycal.com/milynnus/proof-of-solution")
         
