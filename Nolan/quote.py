@@ -86,9 +86,11 @@ if not st.session_state['stage']:
         if cta == ':rainbow[Call Back]':
             st.write('You selected for us to call you back.')
             st.link_button(":blue[Book Now]", "https://tidycal.com/milynnus/quick-chat")
+            st.caption("Go ahead. Try it")
         else:
             st.write("You have decided to place a booking.")
             st.balloons()
             st.link_button(":blue[Checkout]", f"https://needyodddeletion.milynnus.repl.co/checkout/{st.session_state['order_key']}")
+            st.caption("For purpose of demo, this button will not work")
             st.link_button(":blue[Book Now]", "https://tidycal.com/milynnus/proof-of-solution")
-        
+            st.caption("Go ahead. Try it")
