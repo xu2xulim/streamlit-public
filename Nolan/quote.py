@@ -20,7 +20,7 @@ if 'order_key' not in st.session_state:
 
 #@st.cache_data(suppress_st_warning=True)
 
-st.title("The Cleaning Fam")
+st.title("The Scrub Perfect Cleaning")
 
 if not st.session_state['stage']:
     with st.expander("Open for Simple Quotation"):
@@ -28,7 +28,7 @@ if not st.session_state['stage']:
         
         quote_menu = [{
 			    "description": "Enter the number of bedrooms",
-				"name": "Bedroom",
+				"name": "Bedrooms",
 		        "unit_amount": 22000,
                 "display_price": 220.00,
 		        "quantity": 0
