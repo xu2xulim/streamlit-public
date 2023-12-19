@@ -18,6 +18,7 @@ if 'stage' not in st.session_state:
 if 'order_key' not in st.session_state:
     st.session_state.order_key = False
 
+warning = None
 #@st.cache_data(suppress_st_warning=True)
 
 st.title("The Scrub Perfect Cleaning")
