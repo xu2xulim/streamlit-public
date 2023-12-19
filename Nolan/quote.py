@@ -23,7 +23,7 @@ st.write(st.session_state)
 
 st.title("The Scrub Perfect Cleaning")
 
-if st.session_state['stage'] = False :
+if st.session_state['stage'] == False :
     with st.expander("Open for Simple Quotation"):
         with st.form("Your basic details"):
             st.write("Please fill in the following:")
