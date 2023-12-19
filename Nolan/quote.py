@@ -24,8 +24,26 @@ st.title("The Scrub Perfect Cleaning")
 
 if not st.session_state['stage']:
     with st.expander("Open for Simple Quotation"):
+        with st.form("Your basic details"):
+            st.write("Inside the form")
+            name = st.text_input('Your name')
+            email = st.text_input('Your email *')
+            phone = st.text_input('Your telephone')
+
+            # Every form must have a submit button.
+            submitted = st.form_submit_button("Submit")
+            if submitted:
+                if email:
+                    pass
+                else:
+                    st.write("We will need your email")
+                    st.rerun()
+
+                    st.session_state['stage'] = 1
+
     
-        
+if st.session_state['stage'] > 0:
+    with st.expander("Open for the quotation details"):   
         quote_menu = [{
 			    "description": "Enter the number of bedrooms",
 				"name": "Bedrooms",
