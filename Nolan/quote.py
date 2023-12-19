@@ -18,7 +18,6 @@ if 'stage' not in st.session_state:
 if 'order_key' not in st.session_state:
     st.session_state.order_key = False
 
-warning = None
 #@st.cache_data(suppress_st_warning=True)
 
 st.title("The Scrub Perfect Cleaning")
@@ -27,9 +26,12 @@ if not st.session_state['stage']:
     with st.expander("Open for Simple Quotation"):
         with st.form("Your basic details"):
             st.write("Please fill in the following:")
-            if warning:
-                st.warning(warning)
-                warning = None
+            try :
+                if warning:
+                    st.warning(warning)
+                    warning = None
+            except:
+                pass
 
             name = st.text_input('Your name')
             email = st.text_input('Your email *')
