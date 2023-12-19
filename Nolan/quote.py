@@ -23,7 +23,7 @@ st.write(st.session_state)
 
 st.title("The Scrub Perfect Cleaning")
 
-if not st.session_state['stage']:
+if st.session_state['stage'] = False :
     with st.expander("Open for Simple Quotation"):
         with st.form("Your basic details"):
             st.write("Please fill in the following:")
@@ -38,8 +38,8 @@ if not st.session_state['stage']:
                 if email:
                     st.session_state['stage'] = 1
                 else:
-                    st.warning("We will need your email")
-                    st.rerun()
+                    st.warning('We need your email address', icon="⚠️")
+                    st.stop()
                     
     
 if st.session_state['stage'] > 0:
